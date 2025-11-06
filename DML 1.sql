@@ -1,0 +1,57 @@
+-- AGENTS
+INSERT INTO AGENTS VALUES (1, 'Marek', 'Zielinski', 'marek.zielinski@agency.pl', '48123456780');
+INSERT INTO AGENTS VALUES (2, 'Katarzyna', 'Lewandowska', 'katarzyna.lewa@agency.pl', '48123456781');
+
+-- OWNER
+INSERT INTO OWNER VALUES (1, 'Jan', 'Kowalski', 'jan.kowalski@home.pl', '48501234567');
+INSERT INTO OWNER VALUES (2, 'Anna', 'Nowak', 'anna.nowak@home.pl', '48507654321');
+
+-- PROPERTIES
+INSERT INTO PROPERTIES VALUES (1, 1, 'ul. Marszałkowska 10', 'Warsaw', 'Apartment', '55');
+INSERT INTO PROPERTIES VALUES (2, 2, 'ul. Puławska 21', 'Warsaw', 'House', '120');
+
+-- LISTING
+INSERT INTO LISTING VALUES (1, 1, 'Rent', 3500.00, TO_DATE('2025-05-01', 'YYYY-MM-DD'), 1);
+INSERT INTO LISTING VALUES (2, 2, 'Sale', 950000.00, TO_DATE('2025-06-01', 'YYYY-MM-DD'), 1);
+
+-- AGENT_ASSIGNMENTS
+INSERT INTO AGENT_ASSIGNMENTS VALUES (1, 1, 1, TO_DATE('2025-05-10', 'YYYY-MM-DD'));
+INSERT INTO AGENT_ASSIGNMENTS VALUES (2, 2, 2, TO_DATE('2025-05-12', 'YYYY-MM-DD'));
+
+-- AMENITITY
+INSERT INTO AMENITITY VALUES (1, 'Balcony', 'Outdoor');
+INSERT INTO AMENITITY VALUES (2, 'Elevator', 'Building');
+INSERT INTO AMENITITY VALUES (3, 'Parking', 'Building');
+
+-- PROPERTY_AMENITIES
+INSERT INTO PROPERTY_AMENITIES VALUES (1, 1);
+INSERT INTO PROPERTY_AMENITIES VALUES (1, 2);
+INSERT INTO PROPERTY_AMENITIES VALUES (2, 1);
+INSERT INTO PROPERTY_AMENITIES VALUES (2, 3);
+
+-- PROPERTY_PHOTOS
+INSERT INTO PROPERTY_PHOTOS VALUES (1, 1, 'http://example.com/photo1.jpg', 'Front view');
+INSERT INTO PROPERTY_PHOTOS VALUES (2, 1, 'http://example.com/photo2.jpg', 'Living room');
+INSERT INTO PROPERTY_PHOTOS VALUES (3, 2, 'http://example.com/photo3.jpg', 'Garden');
+
+-- USER
+INSERT INTO "USER" VALUES (1, 'Tomasz', 'Wójcik', 'tomasz.wojcik@example.com', '48111222333', 'Tenant');
+INSERT INTO "USER" VALUES (2, 'Elżbieta', 'Dąbrowska', 'elzbieta.d@example.com', '48999888777', 'Buyer');
+
+-- INQUIRY
+INSERT INTO INQUIRY VALUES (1, 1, 1, TO_DATE('2025-05-02', 'YYYY-MM-DD'), 'Pending');
+INSERT INTO INQUIRY VALUES (2, 2, 2, TO_DATE('2025-06-02', 'YYYY-MM-DD'), 'Accepted');
+
+-- VIEWING
+INSERT INTO VIEWING VALUES (1, 1, TO_DATE('2025-05-05', 'YYYY-MM-DD'), 'Client requested evening');
+INSERT INTO VIEWING VALUES (2, 2, TO_DATE('2025-06-05', 'YYYY-MM-DD'), 'Client confirmed morning slot');
+
+-- CONTRACT
+INSERT INTO CONTRACT VALUES (1, 1, 1, 'Rental Agreement', TO_DATE('2025-05-10', 'YYYY-MM-DD'), 3500.00);
+INSERT INTO CONTRACT VALUES (2, 2, 2, 'Sale Agreement', TO_DATE('2025-06-10', 'YYYY-MM-DD'), 950000.00);
+
+-- PAYMENT
+INSERT INTO PAYMENT VALUES (1, 1, TO_DATE('2025-05-10', 'YYYY-MM-DD'), 3500.00, 'Paid');
+INSERT INTO PAYMENT VALUES (2, 2, TO_DATE('2025-06-10', 'YYYY-MM-DD'), 950000.00, 'Pending');
+
+COMMIT;
